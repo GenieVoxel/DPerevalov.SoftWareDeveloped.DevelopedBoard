@@ -1,5 +1,5 @@
 ﻿
-namespace DevelopedBoard
+namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
 {
     partial class StartForm
     {
@@ -48,9 +48,10 @@ namespace DevelopedBoard
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "StartForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Начисление заработной платы";
             this.ResumeLayout(false);
 

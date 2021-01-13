@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DevelopedBoard
+namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
 {
     public partial class StartForm : Form
     {
@@ -23,7 +23,7 @@ namespace DevelopedBoard
         /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
