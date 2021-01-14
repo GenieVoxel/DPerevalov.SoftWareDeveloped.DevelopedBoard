@@ -25,12 +25,17 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
+            // Обращаемся для закрытия БД
+            DBOpenCloseBase.DBClose();
+
+            //Выход их программы
             Application.Exit();
         }
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            //DBOpen dBOpen = Storage.DBOpen.Equals();
+            //Обращаемся к открытию базы
+            DBOpenCloseBase.DBOpen();
         }
     }
 }
