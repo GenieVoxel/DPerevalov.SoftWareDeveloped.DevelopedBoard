@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DPerevalov.SoftWareDeveloped.Storage;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +26,11 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void StartForm_Load(object sender, EventArgs e)
+        {
+            //DBOpen dBOpen = Storage.DBOpen.Equals();
         }
     }
 }

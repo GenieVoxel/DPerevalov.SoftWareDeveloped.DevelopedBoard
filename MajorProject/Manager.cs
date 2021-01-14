@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DPerevalov.SoftWareDeveloped.MajorProject
 {
-    public class Manager
+    public class Manager : Person
     {
     }
 }
