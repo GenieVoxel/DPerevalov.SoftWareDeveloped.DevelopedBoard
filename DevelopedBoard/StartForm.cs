@@ -23,11 +23,8 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         /// <summary>
         /// Выход из программы
         /// </summary>
-        private void button1_Click(object sender, EventArgs e)
+        private void btExit_Click(object sender, EventArgs e)
         {
-            // Обращаемся для закрытия БД
-            DBOpenCloseBase.DBClose();
-
             //Выход их программы
             Application.Exit();
         }
@@ -37,5 +34,34 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             //Обращаемся к открытию базы
             DBOpenCloseBase.DBOpen();
         }
+
+        private void StartForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Обращаемся для закрытия БД при закрытии программы
+            DBOpenCloseBase.DBClose();
+        }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            AddForm addForm = (AddForm)Application.OpenForms["AddForm"];
+
+            // Если форма не существует, то создаём
+            if (addForm == null)
+            {
+                // Создание нового экземпляра формы
+                AddForm form2 = new AddForm();
+                // Отображаем форму
+                form2.Show();
+            }
+            else
+                // Активируем форму на передний план (из трея или заднего плана)
+                addForm.Activate();
+        }
+
+        private UpdatingTable()
+        {
+            //
+        }
+
     }
 }

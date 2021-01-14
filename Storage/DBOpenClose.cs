@@ -7,6 +7,8 @@ namespace DPerevalov.SoftWareDeveloped.Storage
     //string baseName = "CompanyWorkers.db";
     public class DBOpenCloseBase
     {
+        
+        private SQLiteConnection connectBD;
         public static void DBOpen()
         {
             string baseName = "CompanyWorkers.db";
@@ -19,7 +21,7 @@ namespace DPerevalov.SoftWareDeveloped.Storage
 
                 // создаем таблицу БД
                 // в строке указывается к какой базе подключаемся
-                using (SQLiteConnection Connect = new SQLiteConnection(@"Data Source = " + path + "/" + baseName + "; Version=3;"))
+                using (SQLiteConnection ConnectDB = new SQLiteConnection(@"Data Source = " + path + "/" + baseName + "; Version=3;"))
                 {
                     // строка запроса, который надо будет выполнить
                     // и создать таблицу, если её нет
@@ -27,13 +29,13 @@ namespace DPerevalov.SoftWareDeveloped.Storage
                         "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "name VARCHAR(20)," +
                         "namegroup VARCHAR(10)," +
-                        "salaryrate BINARY," +
+                        "salaryrate INTEGER," +
                         "date DATA," +
                         "namesubordination VARCHAR(20)," +
                         "namesubordinate VARCHAR(20))";
-                    SQLiteCommand Command = new SQLiteCommand(commandText, Connect);
+                    SQLiteCommand Command = new SQLiteCommand(commandText, ConnectDB);
                     // открыть соединение с БД
-                    Connect.Open();
+                    ConnectDB.Open();
                     // выполнить запрос
                     Command.ExecuteNonQuery();
                 }
@@ -46,9 +48,9 @@ namespace DPerevalov.SoftWareDeveloped.Storage
             string baseName = "CompanyWorkers.db";
             string path = Directory.GetCurrentDirectory();
             //Закрыть соединение с БД
-            using (SQLiteConnection Connect = new SQLiteConnection(@"Data Source = " + path + "/" + baseName + "; Version=3;"))
+            using (SQLiteConnection ConnectDB = new SQLiteConnection(@"Data Source = " + path + "/" + baseName + "; Version=3;"))
             {
-                Connect.Close();
+                ConnectDB.Close();
             }
         }
 
