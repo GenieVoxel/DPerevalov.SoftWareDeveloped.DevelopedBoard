@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DevelopedBoard
+namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
 {
     static class Program
     {

@@ -12,4 +12,9 @@
     <PackageReference Include="sqlite" Version="3.13.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MajorProject\MajorProject.csproj" />
+    <ProjectReference Include="..\Storage\Storage.csproj" />
+  </ItemGroup>
+
 </Project>
