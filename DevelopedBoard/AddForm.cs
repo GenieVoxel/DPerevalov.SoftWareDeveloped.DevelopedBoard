@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DPerevalov.SoftWareDeveloped.Storage;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +19,16 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
 
         private void btCancel_Click(object sender, EventArgs e)
         {
+            //Закрытие формы
+            this.Close();
+        }
+
+        private void btOk_Click(object sender, EventArgs e)
+        {
+            //Добовляем запись
+            DBOpenCloseBase.DBAdd(txtName.Text, cbNameGroup.Text, int.Parse(mstxtSalaryrate.Text), 
+                dtDate.Value.Date, cbNameSubordinate.Text);
+            //Закрытие формы
             this.Close();
         }
     }

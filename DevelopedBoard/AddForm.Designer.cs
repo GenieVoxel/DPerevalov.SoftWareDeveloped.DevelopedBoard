@@ -32,9 +32,9 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.lbName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lbData = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtDate = new System.Windows.Forms.DateTimePicker();
             this.lbSalaryRate = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mstxtSalaryrate = new System.Windows.Forms.MaskedTextBox();
             this.lbNameGroup = new System.Windows.Forms.Label();
             this.cbNameGroup = new System.Windows.Forms.ComboBox();
             this.lbNameSubordinate = new System.Windows.Forms.Label();
@@ -69,12 +69,12 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.lbData.TabIndex = 2;
             this.lbData.Text = "Дата принятия на работу";
             // 
-            // dateTimePicker1
+            // dtDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(163, 43);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(162, 23);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtDate.Location = new System.Drawing.Point(163, 43);
+            this.dtDate.Name = "dtDate";
+            this.dtDate.Size = new System.Drawing.Size(162, 23);
+            this.dtDate.TabIndex = 3;
             // 
             // lbSalaryRate
             // 
@@ -85,15 +85,15 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.lbSalaryRate.TabIndex = 4;
             this.lbSalaryRate.Text = "Базовая ставка";
             // 
-            // maskedTextBox1
+            // mstxtSalaryrate
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(163, 72);
-            this.maskedTextBox1.Mask = "0000000000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(162, 23);
-            this.maskedTextBox1.TabIndex = 5;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.maskedTextBox1.ValidatingType = typeof(int);
+            this.mstxtSalaryrate.Location = new System.Drawing.Point(163, 72);
+            this.mstxtSalaryrate.Mask = "0000000000";
+            this.mstxtSalaryrate.Name = "mstxtSalaryrate";
+            this.mstxtSalaryrate.Size = new System.Drawing.Size(162, 23);
+            this.mstxtSalaryrate.TabIndex = 5;
+            this.mstxtSalaryrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mstxtSalaryrate.ValidatingType = typeof(int);
             // 
             // lbNameGroup
             // 
@@ -146,6 +146,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.btOk.TabIndex = 10;
             this.btOk.Text = "Запись";
             this.btOk.UseVisualStyleBackColor = true;
+            this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
             // btCancel
             // 
@@ -168,9 +169,9 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.Controls.Add(this.lbNameSubordinate);
             this.Controls.Add(this.cbNameGroup);
             this.Controls.Add(this.lbNameGroup);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mstxtSalaryrate);
             this.Controls.Add(this.lbSalaryRate);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtDate);
             this.Controls.Add(this.lbData);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lbName);
@@ -192,14 +193,14 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lbData;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lbSalaryRate;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mstxtSalaryrate;
         private System.Windows.Forms.Label lbNameGroup;
         private System.Windows.Forms.ComboBox cbNameGroup;
         private System.Windows.Forms.Label lbNameSubordinate;
         private System.Windows.Forms.ComboBox cbNameSubordinate;
         private System.Windows.Forms.Button btOk;
         private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.DateTimePicker dtDate;
     }
 }

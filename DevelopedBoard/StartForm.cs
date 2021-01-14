@@ -58,7 +58,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                 addForm.Activate();
         }
 
-        private UpdatingTable()
+        private void UpdatingTable()
         {
             //
         }
