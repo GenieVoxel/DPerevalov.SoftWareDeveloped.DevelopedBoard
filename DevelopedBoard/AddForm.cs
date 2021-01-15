@@ -26,8 +26,9 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         private void btOk_Click(object sender, EventArgs e)
         {
             //Добовляем запись
-            DBOpenCloseBase.DBAdd(txtName.Text, cbNameGroup.Text, int.Parse(mstxtSalaryrate.Text), 
-                dtDate.Value.Date, cbNameSubordinate.Text);
+            DBOpenCloseBase.DBAdd(txtName.Text, cbNameGroup.Text, int.Parse(mstxtSalaryrate.Text),
+                Convert.ToString(dtDate.Value), cbNameSubordinate.Text);
+            
             //Закрытие формы
             this.Close();
         }
