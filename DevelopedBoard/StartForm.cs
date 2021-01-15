@@ -150,11 +150,11 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                     }
                     else if (sNamegroup == "Salesman")
                         {
-                            label1.Text = "Salesman";
+                            //label1.Text = "Salesman";
                         }
                         else
                         {
-                            label1.Text = "Employee";
+                            //label1.Text = "Employee";
                         }
 
                 }
