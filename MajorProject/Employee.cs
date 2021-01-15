@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DPerevalov.SoftWareDeveloped.MajorProject
 {
-    public class Employee : Person
+    public class Employee
     {
     }
 }

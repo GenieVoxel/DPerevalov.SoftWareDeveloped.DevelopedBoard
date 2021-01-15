@@ -4,7 +4,11 @@ using System.Text;
 
 namespace DPerevalov.SoftWareDeveloped.MajorProject
 {
-    public class Manager : Person
+    public class Manager
     {
+        public static void ManagerZP(string Zplata)
+        {
+
+        }
     }
 }

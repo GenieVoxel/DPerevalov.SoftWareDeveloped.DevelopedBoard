@@ -1,4 +1,5 @@
 ﻿using DPerevalov.SoftWareDeveloped.Storage;
+using DPerevalov.SoftWareDeveloped.MajorProject;
 
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,8 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             DBOpenCloseBase.DBOpen();
 
             UpdatingTable();
+
+            lbZPFirm.Text = "Идет подсчет...";
         }
 
         private void StartForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -60,7 +63,8 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                 // Активируем форму на передний план (из трея или заднего плана)
                 addForm.Activate();
         }
-
+        
+        // Метод обновления таблицы
         private void UpdatingTable()
         {
 
@@ -76,7 +80,8 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
 
             DataTable dTable = new DataTable();
             String CommandText;
-
+                
+            // Заполняем таблицу данными
             try
             {
                 CommandText = "SELECT * FROM CompanyTable";
@@ -102,6 +107,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
 
         private void StartForm_Activated(object sender, EventArgs e)
         {
+            // При активации формы, обновить таблицу
             UpdatingTable();
         }
 
@@ -132,9 +138,25 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                     string sDate = (string)dgView.Rows[index].Cells[4].Value;
                     string sNamesubordination = (string)dgView.Rows[index].Cells[5].Value;
                     string sNamesubordinate = (string)dgView.Rows[index].Cells[6].Value;
+                    
+                    // Вывод Имени сотрудника
+                    lbNameZP.Text = sName;
+                    lbZPName.Text = "Идет пересчет...";
 
-                    //lbNameZP.Text = "Выделенная строка: ";
-                    //label1.Text = sName + " / " + sNamegroup + " / " + sSalaryrate + " / " + sNamesubordination + " / " + sNamesubordinate;
+                    // Выполняем действия по начислению зарплаты по группе сотрудника и вызова соответствующего класса
+                    if (sNamegroup == "Manager")
+                    {
+                        Manager.ManagerZP(sSalaryrate);
+                    }
+                    else if (sNamegroup == "Salesman")
+                        {
+                            label1.Text = "Salesman";
+                        }
+                        else
+                        {
+                            label1.Text = "Employee";
+                        }
+
                 }
             }
          }

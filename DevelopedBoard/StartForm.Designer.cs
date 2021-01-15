@@ -180,7 +180,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             // 
             this.label1.Location = new System.Drawing.Point(162, 342);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(487, 23);
+            this.label1.Size = new System.Drawing.Size(133, 23);
             this.label1.TabIndex = 7;
             this.label1.Text = "зарплата составляет: ";
             // 
