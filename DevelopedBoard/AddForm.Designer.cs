@@ -88,7 +88,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             // mstxtSalaryrate
             // 
             this.mstxtSalaryrate.Location = new System.Drawing.Point(163, 72);
-            this.mstxtSalaryrate.Mask = "0000000000";
+            this.mstxtSalaryrate.Mask = "0000000";
             this.mstxtSalaryrate.Name = "mstxtSalaryrate";
             this.mstxtSalaryrate.Size = new System.Drawing.Size(162, 23);
             this.mstxtSalaryrate.TabIndex = 5;
@@ -183,6 +183,8 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавить запись";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddForm_FormClosed);
+            this.Load += new System.EventHandler(this.AddForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

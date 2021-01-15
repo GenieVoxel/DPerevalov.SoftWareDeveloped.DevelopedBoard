@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
 {
@@ -31,6 +32,15 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             
             //Закрытие формы
             this.Close();
+        }
+
+        private void AddForm_Load(object sender, EventArgs e)
+        {
+            //
+        }
+        private void AddForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }

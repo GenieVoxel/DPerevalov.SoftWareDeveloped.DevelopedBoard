@@ -97,6 +97,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.btDelete.TabIndex = 3;
             this.btDelete.Text = "&Удалить";
             this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // dgView
             // 
@@ -116,6 +117,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.dgView.RowTemplate.Height = 25;
             this.dgView.Size = new System.Drawing.Size(637, 287);
             this.dgView.TabIndex = 5;
+            this.dgView.Click += new System.EventHandler(this.dgView_Click);
             // 
             // id
             // 
@@ -178,7 +180,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             // 
             this.label1.Location = new System.Drawing.Point(162, 342);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 23);
+            this.label1.Size = new System.Drawing.Size(487, 23);
             this.label1.TabIndex = 7;
             this.label1.Text = "зарплата составляет: ";
             // 
@@ -245,6 +247,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Начисление заработной платы";
+            this.Activated += new System.EventHandler(this.StartForm_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StartForm_FormClosed);
             this.Load += new System.EventHandler(this.StartForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).EndInit();
@@ -260,6 +263,13 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Button btEdit;
         private System.Windows.Forms.Button btDelete;
+        private System.Windows.Forms.Label lbNameZP;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbZPName;
+        private System.Windows.Forms.Label lbZPFirm;
         private System.Windows.Forms.DataGridView dgView;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -268,13 +278,6 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn namesuardinate;
         private System.Windows.Forms.DataGridViewTextBoxColumn namesuardination;
-        private System.Windows.Forms.Label lbNameZP;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbZPName;
-        private System.Windows.Forms.Label lbZPFirm;
     }
 }
 
