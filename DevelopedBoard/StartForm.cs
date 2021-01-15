@@ -38,7 +38,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         private void StartForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Обращаемся для закрытия БД при закрытии программы
-            DBOpenCloseBase.DBClose();
+            // DBOpenCloseBase.DBClose();
         }
 
         private void btAdd_Click(object sender, EventArgs e)

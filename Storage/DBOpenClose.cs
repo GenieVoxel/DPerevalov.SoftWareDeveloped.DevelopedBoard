@@ -7,6 +7,7 @@ namespace DPerevalov.SoftWareDeveloped.Storage
     public class DBOpenCloseBase
     {
         
+        // Метод для проверки и создания БД и таблицы
         public static void DBOpen()
         {
             SQLiteConnection baseConnect;
@@ -50,38 +51,36 @@ namespace DPerevalov.SoftWareDeveloped.Storage
 
         public static void DBClose()
         {
-            
+            //
         }
 
-        public static void DBAdd(string name, string namegroup, int salaryrate, string date, string namesuardinate)
+        // Метод для записи в БД
+        public static void DBAdd(string name, string namegroup, int salaryrate, string date, string namesubordinate)
         {
             SQLiteConnection baseConnect;
             SQLiteCommand baseCmd;
             String baseName = "CompanyWorkers.db";
+            String namesubordination = "";
 
             baseConnect = new SQLiteConnection();
             baseCmd = new SQLiteCommand();
 
-            //if (!File.Exists(baseName))
-           // {
-                // Открыть таблицу
-                using (SQLiteConnection ConnectDB = new SQLiteConnection(@"Data Source = " + baseName + "; Version=3;"))
-                {
-                    baseConnect = new SQLiteConnection("Data Source=" + baseName + ";Version=3;");
+            // Открыть БД
+            // Открыть таблицу
+            SQLiteConnection ConnectDB = new SQLiteConnection(@"Data Source = " + baseName + "; Version=3;");
+            baseConnect = new SQLiteConnection("Data Source=" + baseName + ";Version=3;");
                     
-                    //Открыть БД
-                    baseConnect.Open();
-                    baseCmd.Connection = baseConnect;
+            baseConnect.Open();
+            baseCmd.Connection = baseConnect;
 
-                    // Записать данные
-                    baseCmd.CommandText = "INSERT INTO CompanyTable (name, namegroup, salaryrate, date, namesuardinate) " +
-                            "VALUES ('" + name + "' , '" + namegroup + "' , '" + salaryrate + "' , '" + date + "' , '" + namesuardinate + "')";
-                    baseCmd.ExecuteNonQuery();
-                    
-                    // Закрыть БД
-                    baseConnect.Close();
-                }
-            //}
+            // Записать данные
+            baseCmd.CommandText = "INSERT INTO CompanyTable (name, namegroup, salaryrate, date, namesubordination, namesubordinate) " +
+                            "VALUES ('" + name + "' , '" + namegroup + "' , '" + salaryrate + "' , '" + date + "' , '"
+                            + namesubordination + "' , '" + namesubordinate + "')";
+            baseCmd.ExecuteNonQuery();
+
+            // Закрыть БД
+            baseConnect.Close();
         }
 
     }
