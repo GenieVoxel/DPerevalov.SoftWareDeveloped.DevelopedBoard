@@ -152,7 +152,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                     // tData - Дата на момент расчета зарплаты
                     if (sNamegroup == "Manager")
                     {
-                        lbZPName.Text = Manager.WagesManager(sDate, tData, sSalaryrate).ToString("0.00");
+                        lbZPName.Text = Manager.WagesManager(sDate, tData, sSalaryrate, sNamesubordinate).ToString("0.00");
                     }
                     else if (sNamegroup == "Salesman")
                         {

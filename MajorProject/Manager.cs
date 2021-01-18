@@ -8,7 +8,7 @@ namespace DPerevalov.SoftWareDeveloped.MajorProject
     {
         // sDate - Дата принятия на работу
         // tData - Дата на момент расчета зарплаты
-        public static decimal WagesManager(string sDate, string tDate, string salaryRate)
+        public static decimal WagesManager(string sDate, string tDate, string salaryRate, string sNamesubordinate)
         {
             decimal wagesManager = 0.0M;
             int percent = 5, rData;
@@ -60,6 +60,11 @@ namespace DPerevalov.SoftWareDeveloped.MajorProject
             }
             else dayEnd = dayPerson;
 
+            // Если имеется подчиненный, то добовляем процент от его зарплаты
+            if (sNamesubordinate != "")
+            {
+
+            }
 
             //Вычисляем зарплату
             wagesManager = ((dSalaryRate + (dSalaryRate / 100 * percent)) / dayEndMonth) * dayEnd;

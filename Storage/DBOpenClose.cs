@@ -86,5 +86,11 @@ namespace DPerevalov.SoftWareDeveloped.Storage
         {
             //
         }
+
+        // Поиск данных в БД
+        public static void DBSearch(string namesubordinate)
+        {
+            //
+        }
     }
 }
