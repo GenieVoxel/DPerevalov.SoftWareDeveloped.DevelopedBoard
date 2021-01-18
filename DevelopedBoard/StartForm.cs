@@ -148,9 +148,12 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                     string tData = dtDey.Value.ToString("dd.MM.yyyy");
 
                     // Выполняем действия по начислению зарплаты по группе сотрудника и вызова соответствующего класса
+                    // sDate - Дата принятия на работу
+                    // tData - Дата на момент расчета зарплаты
                     if (sNamegroup == "Manager")
                     {
-                        Manager.ManagerZP(sSalaryrate);
+                        lbZPFirm.Text = sSalaryrate;
+                        lbZPName.Text = Manager.WagesManager(sDate, tData, sSalaryrate).ToString("0.00");
                     }
                     else if (sNamegroup == "Salesman")
                         {
@@ -158,9 +161,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                         }
                         else
                         {
-                        // sDate - Дата принятия на работу
-                        // tData - Дата на момент расчета зарплаты
-                        lbZPName.Text = Employee.WagesEmployee(sDate, tData, sSalaryrate).ToString("0.00");
+                            lbZPName.Text = Employee.WagesEmployee(sDate, tData, sSalaryrate).ToString("0.00");
                         }
 
                 }

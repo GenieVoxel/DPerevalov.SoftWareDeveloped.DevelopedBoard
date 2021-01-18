@@ -13,23 +13,22 @@ namespace DPerevalov.SoftWareDeveloped.MajorProject
             decimal wagesEmployee = 0.0M;
             int percent = 3, rData;
 
+            // Вызов метода CalculateAge из класса Settings для подсчета стажа
             rData = Settings.CalculateAge(DateTime.Parse(sDate), DateTime.Parse(tDate));
 
-            if (rData > 0)
+            
+            for (int i = 1; i < rData; i++)
             {
-                for (int i = 1; i < rData; i++)
-                {
-                    percent += 3;
-                    if (percent >= 30) percent = 30;
-                }
+                percent += 3;
+                if (percent >= 30) percent = 30;
             }
 
-            decimal dSsalaryRate;
-            dSsalaryRate = Convert.ToDecimal(salaryRate);
+            if (rData == 0) percent = 0;
 
-            wagesEmployee = dSsalaryRate + dSsalaryRate / 100 * percent;
+            decimal dSalaryRate;
+            dSalaryRate = Convert.ToDecimal(salaryRate);
 
-            //Console.WriteLine(rData);
+            wagesEmployee = dSalaryRate + (dSalaryRate / 100 * percent);
 
             return wagesEmployee;
         }
