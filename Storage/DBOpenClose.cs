@@ -6,7 +6,7 @@ namespace DPerevalov.SoftWareDeveloped.Storage
 {
     public class DBOpenCloseBase
     {
-        
+
         // Метод для проверки и создания БД и таблицы
         public static void DBOpen()
         {
@@ -31,18 +31,18 @@ namespace DPerevalov.SoftWareDeveloped.Storage
                         "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                         "name TEXT," +
                         "namegroup TEXT," +
-                        "salaryrate INTEGER," +
+                        "salaryrate TEXT," +
                         "date TEXT," +
                         "namesubordination TEXT," +
                         "namesubordinate TEXT)";
                     SQLiteCommand Command = new SQLiteCommand(commandText, ConnectDB);
-                    
+
                     // открыть соединение с БД
                     ConnectDB.Open();
-                    
+
                     // выполнить запрос
                     Command.ExecuteNonQuery();
-                    
+
                     // Закрыть БД
                     baseConnect.Close();
                 }
@@ -55,7 +55,7 @@ namespace DPerevalov.SoftWareDeveloped.Storage
         }
 
         // Метод для записи в БД
-        public static void DBAdd(string name, string namegroup, int salaryrate, string date, string namesubordinate)
+        public static void DBAdd(string name, string namegroup, string salaryrate, string date, string namesubordinate)
         {
             SQLiteConnection baseConnect;
             SQLiteCommand baseCmd;
@@ -69,7 +69,7 @@ namespace DPerevalov.SoftWareDeveloped.Storage
             // Открыть таблицу
             SQLiteConnection ConnectDB = new SQLiteConnection(@"Data Source = " + baseName + "; Version=3;");
             baseConnect = new SQLiteConnection("Data Source=" + baseName + ";Version=3;");
-                    
+
             baseConnect.Open();
             baseCmd.Connection = baseConnect;
 
@@ -83,5 +83,10 @@ namespace DPerevalov.SoftWareDeveloped.Storage
             baseConnect.Close();
         }
 
+        // Метод для редактирования
+        public static void DBEdit(int id, string name, string namegroup, string salaryrate, string date, string namesubordinate)
+        {
+            //
+        }
     }
 }

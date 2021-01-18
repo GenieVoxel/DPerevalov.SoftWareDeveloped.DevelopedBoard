@@ -7,9 +7,23 @@ namespace DPerevalov.SoftWareDeveloped.MajorProject
     public static class Settings
     {
         /// <summary>
-        /// Определяем сколько рабочих дней в месяце
-        /// По умолчанию определим, что 20 дней
+        /// Определяем стаж
         /// </summary>
-        public const byte DaysInMonth = 20;
+        public static int CalculateAge(DateTime BirthDate, DateTime dateTime)
+        {
+            int YearsPassed = dateTime.Year - BirthDate.Year;
+
+            if (YearsPassed <= 0)
+            {
+                if (dateTime.Month < BirthDate.Month || (dateTime.Month == BirthDate.Month && dateTime.Day < BirthDate.Day))
+                {
+                    YearsPassed--;
+                }
+            }
+
+            Console.WriteLine(YearsPassed);
+
+            return YearsPassed;
+        }
     }
 }

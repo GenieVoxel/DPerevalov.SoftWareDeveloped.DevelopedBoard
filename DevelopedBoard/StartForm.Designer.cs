@@ -44,7 +44,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.namesuardination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbNameZP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtDey = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbZPName = new System.Windows.Forms.Label();
@@ -88,6 +88,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.btEdit.TabIndex = 2;
             this.btEdit.Text = "&Редактировать";
             this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btDelete
             // 
@@ -184,13 +185,13 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.label1.TabIndex = 7;
             this.label1.Text = "зарплата составляет: ";
             // 
-            // dateTimePicker1
+            // dtDey
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(238, 305);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(143, 23);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 1, 14, 0, 0, 0, 0);
+            this.dtDey.Location = new System.Drawing.Point(238, 305);
+            this.dtDey.Name = "dtDey";
+            this.dtDey.Size = new System.Drawing.Size(143, 23);
+            this.dtDey.TabIndex = 0;
+            this.dtDey.Value = new System.DateTime(2021, 1, 12, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -233,7 +234,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.Controls.Add(this.lbZPName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtDey);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbNameZP);
             this.Controls.Add(this.dgView);
@@ -265,7 +266,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Label lbNameZP;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtDey;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbZPName;

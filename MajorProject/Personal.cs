@@ -2,7 +2,7 @@
 
 namespace DPerevalov.SoftWareDeveloped.MajorProject
 {
-    public class Person
+    public class Personal
     {
     }
 }

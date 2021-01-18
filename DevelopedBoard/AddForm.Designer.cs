@@ -34,13 +34,13 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.lbData = new System.Windows.Forms.Label();
             this.dtDate = new System.Windows.Forms.DateTimePicker();
             this.lbSalaryRate = new System.Windows.Forms.Label();
-            this.mstxtSalaryrate = new System.Windows.Forms.MaskedTextBox();
             this.lbNameGroup = new System.Windows.Forms.Label();
             this.cbNameGroup = new System.Windows.Forms.ComboBox();
             this.lbNameSubordinate = new System.Windows.Forms.Label();
             this.cbNameSubordinate = new System.Windows.Forms.ComboBox();
             this.btOk = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
+            this.txtSalaryrate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbName
@@ -58,7 +58,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.txtName.MaxLength = 20;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(162, 23);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 0;
             // 
             // lbData
             // 
@@ -74,7 +74,8 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.dtDate.Location = new System.Drawing.Point(163, 43);
             this.dtDate.Name = "dtDate";
             this.dtDate.Size = new System.Drawing.Size(162, 23);
-            this.dtDate.TabIndex = 3;
+            this.dtDate.TabIndex = 1;
+            this.dtDate.Value = new System.DateTime(2021, 1, 12, 0, 0, 0, 0);
             // 
             // lbSalaryRate
             // 
@@ -84,16 +85,6 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.lbSalaryRate.Size = new System.Drawing.Size(88, 15);
             this.lbSalaryRate.TabIndex = 4;
             this.lbSalaryRate.Text = "Базовая ставка";
-            // 
-            // mstxtSalaryrate
-            // 
-            this.mstxtSalaryrate.Location = new System.Drawing.Point(163, 72);
-            this.mstxtSalaryrate.Mask = "0000000";
-            this.mstxtSalaryrate.Name = "mstxtSalaryrate";
-            this.mstxtSalaryrate.Size = new System.Drawing.Size(162, 23);
-            this.mstxtSalaryrate.TabIndex = 5;
-            this.mstxtSalaryrate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.mstxtSalaryrate.ValidatingType = typeof(int);
             // 
             // lbNameGroup
             // 
@@ -118,7 +109,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.cbNameGroup.Location = new System.Drawing.Point(163, 104);
             this.cbNameGroup.Name = "cbNameGroup";
             this.cbNameGroup.Size = new System.Drawing.Size(162, 23);
-            this.cbNameGroup.TabIndex = 7;
+            this.cbNameGroup.TabIndex = 3;
             this.cbNameGroup.Text = "Employee";
             // 
             // lbNameSubordinate
@@ -136,14 +127,14 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.cbNameSubordinate.Location = new System.Drawing.Point(163, 134);
             this.cbNameSubordinate.Name = "cbNameSubordinate";
             this.cbNameSubordinate.Size = new System.Drawing.Size(162, 23);
-            this.cbNameSubordinate.TabIndex = 9;
+            this.cbNameSubordinate.TabIndex = 4;
             // 
             // btOk
             // 
             this.btOk.Location = new System.Drawing.Point(354, 15);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(75, 23);
-            this.btOk.TabIndex = 10;
+            this.btOk.TabIndex = 5;
             this.btOk.Text = "Запись";
             this.btOk.UseVisualStyleBackColor = true;
             this.btOk.Click += new System.EventHandler(this.btOk_Click);
@@ -153,23 +144,31 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.btCancel.Location = new System.Drawing.Point(354, 51);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(75, 23);
-            this.btCancel.TabIndex = 11;
+            this.btCancel.TabIndex = 6;
             this.btCancel.Text = "Отмена";
             this.btCancel.UseVisualStyleBackColor = true;
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            // 
+            // txtSalaryrate
+            // 
+            this.txtSalaryrate.Location = new System.Drawing.Point(163, 73);
+            this.txtSalaryrate.Name = "txtSalaryrate";
+            this.txtSalaryrate.Size = new System.Drawing.Size(162, 23);
+            this.txtSalaryrate.TabIndex = 2;
+            this.txtSalaryrate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSalaryrate_KeyDown);
             // 
             // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 169);
+            this.Controls.Add(this.txtSalaryrate);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.cbNameSubordinate);
             this.Controls.Add(this.lbNameSubordinate);
             this.Controls.Add(this.cbNameGroup);
             this.Controls.Add(this.lbNameGroup);
-            this.Controls.Add(this.mstxtSalaryrate);
             this.Controls.Add(this.lbSalaryRate);
             this.Controls.Add(this.dtDate);
             this.Controls.Add(this.lbData);
@@ -196,7 +195,6 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lbData;
         private System.Windows.Forms.Label lbSalaryRate;
-        private System.Windows.Forms.MaskedTextBox mstxtSalaryrate;
         private System.Windows.Forms.Label lbNameGroup;
         private System.Windows.Forms.ComboBox cbNameGroup;
         private System.Windows.Forms.Label lbNameSubordinate;
@@ -204,5 +202,6 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         private System.Windows.Forms.Button btOk;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.DateTimePicker dtDate;
+        private System.Windows.Forms.TextBox txtSalaryrate;
     }
 }

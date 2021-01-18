@@ -34,6 +34,8 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
 
         private void StartForm_Load(object sender, EventArgs e)
         {
+            dtDey.Value = DateTime.Now;
+
             //Обращаемся к открытию базы
             DBOpenCloseBase.DBOpen();
 
@@ -134,7 +136,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                     // Если строка выделена, то вывести информацию о ней
                     string sName = (string)dgView.Rows[index].Cells[1].Value;
                     string sNamegroup = (string)dgView.Rows[index].Cells[2].Value;
-                    string sSalaryrate = (string)dgView.Rows[index].Cells[3].Value.ToString();
+                    string sSalaryrate = (string)dgView.Rows[index].Cells[3].Value;
                     string sDate = (string)dgView.Rows[index].Cells[4].Value;
                     string sNamesubordination = (string)dgView.Rows[index].Cells[5].Value;
                     string sNamesubordinate = (string)dgView.Rows[index].Cells[6].Value;
@@ -143,6 +145,8 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                     lbNameZP.Text = sName;
                     lbZPName.Text = "Идет пересчет...";
 
+                    string tData = dtDey.Value.ToString("dd.MM.yyyy");
+
                     // Выполняем действия по начислению зарплаты по группе сотрудника и вызова соответствующего класса
                     if (sNamegroup == "Manager")
                     {
@@ -150,11 +154,13 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                     }
                     else if (sNamegroup == "Salesman")
                         {
-                            //label1.Text = "Salesman";
+                            //
                         }
                         else
                         {
-                            //label1.Text = "Employee";
+                        // sDate - Дата принятия на работу
+                        // tData - Дата на момент расчета зарплаты
+                        lbZPName.Text = Employee.WagesEmployee(sDate, tData, sSalaryrate).ToString("0.00");
                         }
 
                 }
@@ -186,6 +192,11 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                     //lbNameZP.Text = "Удлить строку: " + sDelete.ToString();
                 }
             }
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            //
         }
     }
 }
