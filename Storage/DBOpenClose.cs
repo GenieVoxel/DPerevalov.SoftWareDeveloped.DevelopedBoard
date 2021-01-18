@@ -11,11 +11,9 @@ namespace DPerevalov.SoftWareDeveloped.Storage
         public static void DBOpen()
         {
             SQLiteConnection baseConnect;
-            SQLiteCommand baseCmd;
             String baseName = "CompanyWorkers.db";
 
             baseConnect = new SQLiteConnection();
-            baseCmd = new SQLiteCommand();
 
             if (!File.Exists(baseName))
             {

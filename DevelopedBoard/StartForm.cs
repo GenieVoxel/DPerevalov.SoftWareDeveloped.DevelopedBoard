@@ -156,8 +156,8 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                     }
                     else if (sNamegroup == "Salesman")
                         {
-                            //
-                        }
+                        lbZPName.Text = Salesman.WagesSalesman(sDate, tData, sSalaryrate).ToString("0.00");
+                    }
                         else
                         {
                             lbZPName.Text = Employee.WagesEmployee(sDate, tData, sSalaryrate).ToString("0.00");

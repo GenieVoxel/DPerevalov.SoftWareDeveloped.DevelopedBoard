@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Data.Common;
 
 namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
 {
@@ -28,16 +29,41 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
         {
             //var dataWages = DateTime.Parse("dd.MM.yyyy");
             //Добовляем запись
-            DBOpenCloseBase.DBAdd(txtName.Text, cbNameGroup.Text, txtSalaryrate.Text, dtDate.Value.ToString("dd.MM.yyyy"), cbNameSubordinate.Text);
-            
-            //Закрытие формы
-            this.Close();
+            if (txtName.Text != cbNameSubordinate.Text)
+            {
+                DBOpenCloseBase.DBAdd(txtName.Text, cbNameGroup.Text, txtSalaryrate.Text, dtDate.Value.ToString("dd.MM.yyyy"), cbNameSubordinate.Text);
+
+                //Закрытие формы
+                this.Close();
+            }
         }
 
         private void AddForm_Load(object sender, EventArgs e)
         {
             dtDate.Value = DateTime.Now;
+
+            // Открыть БД и заполнить Лист именами
+            SQLiteConnection baseConnect;
+            SQLiteCommand baseCmd;
+            String baseName = "CompanyWorkers.db";
+
+            baseConnect = new SQLiteConnection("Data Source=" + baseName + ";Version=3;");
+            baseConnect.Open();
+
+            SQLiteCommand command = new SQLiteCommand("SELECT * FROM 'CompanyTable';", baseConnect);
+            SQLiteDataReader readName = command.ExecuteReader();
+
+            cbNameSubordinate.Items.Clear();
+
+            foreach (DbDataRecord record in readName)
+            {
+                cbNameSubordinate.Items.Add(record["name"].ToString());
+            }
+
+            baseConnect.Close();
+
         }
+
         private void AddForm_FormClosed(object sender, FormClosedEventArgs e)
         {
 
@@ -64,6 +90,15 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
                         if (e.KeyValue == 188 || e.KeyValue == 190 || e.KeyCode == Keys.Decimal || (txtSalaryrate.Text.Length - i) > 2)
                             e.SuppressKeyPress = true;
             }
+        }
+
+        private void cbNameGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbNameGroup.Text == "Employee")
+            {
+                cbNameSubordinate.Visible = false;
+            }
+            else cbNameSubordinate.Visible = true;
         }
     }
 }

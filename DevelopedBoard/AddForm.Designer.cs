@@ -111,6 +111,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.cbNameGroup.Size = new System.Drawing.Size(162, 23);
             this.cbNameGroup.TabIndex = 3;
             this.cbNameGroup.Text = "Employee";
+            this.cbNameGroup.SelectedIndexChanged += new System.EventHandler(this.cbNameGroup_SelectedIndexChanged);
             // 
             // lbNameSubordinate
             // 
@@ -128,6 +129,7 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.cbNameSubordinate.Name = "cbNameSubordinate";
             this.cbNameSubordinate.Size = new System.Drawing.Size(162, 23);
             this.cbNameSubordinate.TabIndex = 4;
+            this.cbNameSubordinate.Visible = false;
             // 
             // btOk
             // 

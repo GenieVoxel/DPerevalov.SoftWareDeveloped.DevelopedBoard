@@ -35,13 +35,6 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.btEdit = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
             this.dgView = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namegroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaryrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namesuardinate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namesuardination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbNameZP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtDey = new System.Windows.Forms.DateTimePicker();
@@ -49,6 +42,13 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.label3 = new System.Windows.Forms.Label();
             this.lbZPName = new System.Windows.Forms.Label();
             this.lbZPFirm = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namegroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namesuardinate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namesuardination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,55 +120,6 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.dgView.TabIndex = 5;
             this.dgView.Click += new System.EventHandler(this.dgView_Click);
             // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Width = 43;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.name.HeaderText = "Имя";
-            this.name.Name = "name";
-            this.name.Width = 56;
-            // 
-            // namegroup
-            // 
-            this.namegroup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.namegroup.HeaderText = "Группа";
-            this.namegroup.Name = "namegroup";
-            this.namegroup.Width = 71;
-            // 
-            // salaryrate
-            // 
-            this.salaryrate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.salaryrate.HeaderText = "Ставка оклада";
-            this.salaryrate.Name = "salaryrate";
-            this.salaryrate.Width = 101;
-            // 
-            // date
-            // 
-            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.date.HeaderText = "Дата приема на работу";
-            this.date.Name = "date";
-            this.date.Width = 111;
-            // 
-            // namesuardinate
-            // 
-            this.namesuardinate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.namesuardinate.HeaderText = "Подчиненный";
-            this.namesuardinate.Name = "namesuardinate";
-            this.namesuardinate.Width = 111;
-            // 
-            // namesuardination
-            // 
-            this.namesuardination.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.namesuardination.HeaderText = "Подчинение";
-            this.namesuardination.Name = "namesuardination";
-            this.namesuardination.Width = 101;
-            // 
             // lbNameZP
             // 
             this.lbNameZP.Location = new System.Drawing.Point(13, 342);
@@ -224,6 +175,55 @@ namespace DPerevalov.SoftWareDeveloped.DevelopedBoard
             this.lbZPFirm.Name = "lbZPFirm";
             this.lbZPFirm.Size = new System.Drawing.Size(100, 15);
             this.lbZPFirm.TabIndex = 12;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Width = 43;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.name.HeaderText = "Имя";
+            this.name.Name = "name";
+            this.name.Width = 56;
+            // 
+            // namegroup
+            // 
+            this.namegroup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.namegroup.HeaderText = "Группа";
+            this.namegroup.Name = "namegroup";
+            this.namegroup.Width = 71;
+            // 
+            // salaryrate
+            // 
+            this.salaryrate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.salaryrate.HeaderText = "Ставка оклада";
+            this.salaryrate.Name = "salaryrate";
+            this.salaryrate.Width = 110;
+            // 
+            // date
+            // 
+            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.date.HeaderText = "Дата приема на работу";
+            this.date.Name = "date";
+            this.date.Width = 111;
+            // 
+            // namesuardinate
+            // 
+            this.namesuardinate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.namesuardinate.HeaderText = "Подчинение";
+            this.namesuardinate.Name = "namesuardinate";
+            this.namesuardinate.Width = 101;
+            // 
+            // namesuardination
+            // 
+            this.namesuardination.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.namesuardination.HeaderText = "Подчинененный";
+            this.namesuardination.Name = "namesuardination";
+            this.namesuardination.Width = 124;
             // 
             // StartForm
             // 
